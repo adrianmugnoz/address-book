@@ -15,6 +15,7 @@ var gulpif = require('gulp-if');
 var ngAnnotate = require('gulp-ng-annotate');
 var angularTemplateCache = require('gulp-angular-templatecache');
 var cleanCSS = require('gulp-clean-css');
+var ghPages = require('gulp-gh-pages');
 
 
 gulp.task('inject', function() {
@@ -108,4 +109,9 @@ gulp.task('live', ['templates', 'inject'], function() {
     browser: 'app',
     startPath: '/'
   });
+});
+
+gulp.task('deploy', function() {
+    return gulp.src('dist/**/*')
+      .pipe(ghPages());
 });
