@@ -23,10 +23,10 @@
         <div layout-gt-sm="row">
         <md-input-container class="md-block" flex-gt-sm>
         <label>Email</label>
-        <input name="email" ng-model="formData.email" type="email" unique-email required>
+        <input name="email" ng-model="formData.email" type="text" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" unique-email required>
         <div ng-messages="userForm.email.$error" role="alert" multiple>
               <div ng-message="required" class="my-message">You must supply an email.</div>
-              <div ng-message="email" class="my-message">That doesn't look like a valid email</div>
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid email</div>
               <div ng-message="unique" class="my-message">Another contact with this email</div>
         </div>
         </md-input-container>
