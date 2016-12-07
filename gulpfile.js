@@ -23,7 +23,7 @@ gulp.task('inject', function() {
   var injectCss = gulp.src(['app/assets/**/*.css']);
   var wiredepOptions = {
     directory: 'bower_components',
-    exclude: [ 'bower_components/material-design-icons-iconfont/dist/fonts/iconjar-map.js', 'bower_components/angular-mocks/angular-mocks.js' ]
+    exclude: [ 'bower_components/material-design-icons-iconfont/dist/fonts/*', 'bower_components/angular-mocks/angular-mocks.js' ]
   };
 
   return gulp.src('app/*.html')
