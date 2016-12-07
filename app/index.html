@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>Simple Address Book</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- build:css assets/css/style.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:css assets/css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/material-design-icons-iconfont/dist/fonts/material-icons.css" />
+    <link rel="stylesheet" href="../bower_components/material-design-icons-iconfont/dist/material-design-icons.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+</head>
+<body>
+    
+    <ab-toolbar></ab-toolbar>
+    <!-- start dynamic content -->
+    <div class="page-content" ui-view></div>
+    <!-- end dynamic content -->
+
+    <!-- build:js js/libs.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/md5/src/md5.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <script src="app.config.js"></script>
+    <script src="shared/toolbar/toolbar.directive.js"></script>
+    <script src="components/contacts/contacts.controller.js"></script>
+    <script src="components/edit/edit.controller.js"></script>
+    <script src="assets/templates/templates.js"></script>
+    <script src="shared/uniqueEmail.directive.js"></script>
+    <script src="shared/storage.service.js"></script>
+    <script src="shared/browserify.bundle.js"></script>
+    <script src="app.states.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

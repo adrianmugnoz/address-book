@@ -1,0 +1,54 @@
+  <md-content layout-padding>
+    <div>
+      <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First name</label>
+            <input name="firstName" ng-model="formData.firstName" required>
+            <div ng-messages="userForm.firstName.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a first name</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last name</label>
+            <input name="lastName" ng-model="formData.lastName" required>
+            <div ng-messages="userForm.lastName.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a last name.</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+        <label>Email</label>
+        <input name="email" ng-model="formData.email" type="email" unique-email required>
+        <div ng-messages="userForm.email.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply an email.</div>
+              <div ng-message="email" class="my-message">That doesn't look like a valid email</div>
+              <div ng-message="unique" class="my-message">Another contact with this email</div>
+        </div>
+        </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Country</label>
+            <md-select name="country" ng-model="formData.country" required>
+              <md-option ng-repeat="country in countries" value="{{country}}">
+                {{country}}
+              </md-option>
+            </md-select>
+            <div ng-messages="userForm.country.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a country.</div>
+            </div>
+          </md-input-container>
+        </div>
+        <span flex></span>
+        <div layout="row" layout-align="end center"> 
+          <md-button class="md-raised md-warn" ng-click="delete()" ng-show="id">Delete</md-button>
+          <md-button type="submit" class="md-raised md-primary" ng-disabled="userForm.$invalid">Save</md-button>
+        </div>
+      </form>
+
+    </div>
+  </md-content>

@@ -1,0 +1,17 @@
+{
+  "name": "SimpleAddressBook",
+  "version": "0.0.1",
+  "description": "Single Page Application (SPA) address book",
+  "author": {
+    "name": "adrianmugnoz",
+    "email": ""
+  },
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-material": "^1.1.1",
+    "angular-ui-router": "^0.3.2",
+    "angular-mocks": "^1.5.9",
+    "material-design-icons-iconfont": "latest",
+    "md5": "^0.4.1"
+  }
+}
